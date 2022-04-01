@@ -110,4 +110,6 @@ jobs:
           cp staging/*.config .ebextensions/
           sed -i -e "s|{RepositoryName}|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" docker-compose.yml
           sed -i -e "s|{EBEnvironment}|$EB_ENVIRONMENT_NAME|g" docker-compose.yml
+          eb create staging --process
+          eb setenv SECRET_KEY_BASE=$(bin/rails secret)
           eb deploy staging --timeout=20 --process
