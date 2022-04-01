@@ -94,7 +94,7 @@ jobs:
 
       - uses: actions/setup-python@master
         with:
-          python-version: "3.7"
+          python-version: "pypy-3.7-v7.3.7"
 
       - name: Install awsebcli
         run: pip install -U awsebcli
