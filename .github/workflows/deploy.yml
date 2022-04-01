@@ -92,11 +92,6 @@ jobs:
           EXIT_CODE=0
           aws ecr describe-images --repository-name=$ECR_REPOSITORY --image-ids=imageTag=$IMAGE_TAG 2> /dev/null || EXIT_CODE=$?
 
-          if [[ $EXIT_CODE != 0 ]]; then
-              echo "${IMAGE_TAG} image tag not found"
-              exit 1
-          fi
-
       - uses: actions/setup-python@master
         with:
           python-version: "3.7"
