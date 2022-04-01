@@ -92,7 +92,7 @@ jobs:
           EXIT_CODE=0
           aws ecr describe-images --repository-name=$ECR_REPOSITORY --image-ids=imageTag=$IMAGE_TAG 2> /dev/null || EXIT_CODE=$?
 
-      - uses: actions/setup-python@master
+      - uses: actions/setup-python
         with:
           python-version: "pypy-3.7-v7.3.7"
 
