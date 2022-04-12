@@ -18,7 +18,7 @@ services:
       - app
 
   app:
-    image: 984414310826.dkr.ecr.ap-northeast-1.amazonaws.com/decidim-kasagi/app:v0.0.1
+    image: 984414310826.dkr.ecr.ap-northeast-1.amazonaws.com/decidim-git
     container_name: app
     environment:
       NEW_RELIC_APP_NAME: decidim-app(staging)
@@ -26,7 +26,7 @@ services:
       - .env
 
   sidekiq:
-    image: 984414310826.dkr.ecr.ap-northeast-1.amazonaws.com/decidim-kasagi/app:v0.0.1
+    image: 984414310826.dkr.ecr.ap-northeast-1.amazonaws.com/decidim-git
     container_name: sidekiq
     command: bundle exec sidekiq -C /app/config/sidekiq.yml
     environment:
