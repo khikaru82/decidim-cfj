@@ -1,6 +1,9 @@
 branch-defaults:
   default:
     environment: staging
+  master:
+    environment: staging
+    group_suffix: null
 global:
   application_name: decidim-app
   default_ec2_keyname: null

@@ -16,7 +16,7 @@ services:
     environment:
       TZ: Asia/Tokyo
     ports:
-      - 3000:80
+      - 80:80
     links:
       - app
     depends_on:
@@ -25,7 +25,7 @@ services:
   app:
     image: decidim-cfj
     build:
-      context: ./
+      context: 
       args:
         RAILS_ENV: *rails_env
     volumes:
