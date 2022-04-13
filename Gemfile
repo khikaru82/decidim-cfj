@@ -14,7 +14,7 @@ gem "decidim-comments", path: "decidim-comments"
 
 gem "decidim-decidim_awesome", "~> 0.7.0"
 
-#gem "bootsnap", "~> 1.3"
+gem "bootsnap", "~> 1.3"
 
 gem "puma", ">= 4.3.5"
 gem "uglifier", "~> 4.1"

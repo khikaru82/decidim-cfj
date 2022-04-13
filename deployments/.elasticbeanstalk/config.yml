@@ -2,7 +2,7 @@ branch-defaults:
   default:
     environment: staging
   master:
-    environment: staging
+    environment: null
     group_suffix: null
 global:
   application_name: decidim-app
