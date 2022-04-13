@@ -25,7 +25,7 @@ services:
   app:
     image: decidim-cfj
     build:
-      context: ./
+      context: 
       args:
         RAILS_ENV: *rails_env
     volumes:
