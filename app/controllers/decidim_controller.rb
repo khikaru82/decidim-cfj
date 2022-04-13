@@ -4,6 +4,4 @@
 # entry point, but you can change what controller it inherits from
 # so you can customize some methods.
 class DecidimController < ApplicationController
- #   skip_before_action :verify_authenticity_token
- #   end
 end
