@@ -3,7 +3,6 @@ version: "3.8"
 services:
   nginx-proxy:
     image: nginx:1.21
-    container_name: nginx
     volumes:
       - ./etc/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./etc/nginx/conf.d:/etc/nginx/conf.d
@@ -18,18 +17,16 @@ services:
       - app
 
   app:
-    image: 984414310826.dkr.ecr.ap-northeast-1.amazonaws.com/decidim-git:staging-46452346
-    container_name: app
+    image: "{RepositoryName}"
     environment:
-      NEW_RELIC_APP_NAME: decidim-app(staging)
+      NEW_RELIC_APP_NAME: decidim-app({EBEnvironment})
     env_file:
       - .env
 
   sidekiq:
-    image: 984414310826.dkr.ecr.ap-northeast-1.amazonaws.com/decidim-git:staging-46452346
-    container_name: sidekiq
+    image: "{RepositoryName}"
     command: bundle exec sidekiq -C /app/config/sidekiq.yml
     environment:
-      NEW_RELIC_APP_NAME: decidim-sidekiq(staging)
+      NEW_RELIC_APP_NAME: decidim-sidekiq({EBEnvironment})
     env_file:
       - .env
