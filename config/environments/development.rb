@@ -71,5 +71,4 @@ Rails.application.configure do
   # No precompilation on demand on first request
   config.assets.check_precompiled_asset = false
 
-  config.web_console.whitelisted_ips = "0.0.0.0/0"
 end
